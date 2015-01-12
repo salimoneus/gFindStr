@@ -20,6 +20,7 @@ namespace GFindStr
         private string fileName;
         private long fullCount = 0;
         bool lastSearchedLogFull = false;
+        bool bInit = false;
         AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
         public GFindStrForm(string filename)
@@ -57,6 +58,8 @@ namespace GFindStr
             {
                 fileName = filename;
             }
+
+            bInit = true;
 
             if(System.IO.File.Exists(fileName))
             {
@@ -362,12 +365,18 @@ namespace GFindStr
 
         private void comboBoxMode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Process();
+            if (bInit)
+            {
+                Process();
+            }
         }
 
         private void comboBoxCase_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Process();
+            if (bInit)
+            {
+                Process();
+            }
         }
     }
 
