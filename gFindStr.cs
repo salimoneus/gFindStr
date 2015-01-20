@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Configuration;
 
+
 namespace GFindStr
 {
     public partial class GFindStrForm : Form
